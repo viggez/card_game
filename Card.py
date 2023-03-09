@@ -5,7 +5,16 @@ class Card:
         self.suit = suit
 
     def __str__(self):
-        return f'{self.rank} of {self.suit}'
+        rank_str = str(self.rank)
+        if self.rank == 11:
+            rank_str = "Jack"
+        elif self.rank == 12:
+            rank_str = "Queen"
+        elif self.rank == 13:
+            rank_str = "King"
+        elif self.rank == 14:
+            rank_str = "Ace"
+        return f"{rank_str} of {self.suit}"
 
     def get_value(self):
         if self.rank == 'Jack':

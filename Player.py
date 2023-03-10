@@ -9,8 +9,8 @@ class Player:
     def add_card(self, card):
         self.hand.append(card)
 
-    def remove_card(self, card):
-        self.hand.remove(card)
+    def remove_card(self):
+        return self.hand.pop()
 
     def play_card(self):
         if len(self.hand) == 0:

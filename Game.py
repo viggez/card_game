@@ -5,7 +5,7 @@ from colorama import Fore, Style
 
 
 class Game:
-    def __init__(self, player1_name, player2_name):
+    def __init__(self, player1_name, player2_name, high_score):
         self.deck = Deck()
         self.deck.shuffle()
         self.player1 = Player(Fore.BLUE + player1_name + Style.RESET_ALL)
@@ -27,6 +27,15 @@ class Game:
 
             player1_card = self.player1.play_card()
             player2_card = self.player2.play_card()
+
+            if response == 'cheat':
+                if len(self.player2.get_hand()) < 5:
+                    print("Opponent doesn't have enough cards to steal.")
+                else:
+                    print("\nCHEAT ENABLED!")
+                    print(f"{self.player1} stole 5 cards from {self.player2}\n")
+                    for i in range(5):
+                        self.player1.add_card(self.player2.remove_card())
 
             print(f"{self.player1} plays: {player1_card}")
             print(f"{self.player2} plays: {player2_card}")
@@ -107,6 +116,9 @@ def main():
     high_score = HighScore()
     high_score.load_scores()
 
+    with open("rules.txt", "r") as f:
+        rules = f.read()
+
     while True:
         print("Welcome to War!")
         print("1. Play game")
@@ -116,8 +128,9 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            player1_name = input("Enter your player nickname: ")
-            game = Game(player1_name, "Player 2", high_score)
+            player1_name = input("Enter player1 nickname: ")
+            player2_name = input("Enter player2 nickname: ")
+            game = Game(player1_name, player2_name, high_score)
             game.play_game()
 
         elif choice == "2":
@@ -125,6 +138,7 @@ def main():
 
         elif choice == "3":
             print("Rules menu option selected.")
+            print(rules)
 
         elif choice == "4":
             print("Goodbye!")

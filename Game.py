@@ -5,16 +5,23 @@ from colorama import Fore, Style
 
 
 class Game:
-    def __init__(self, player1_name, player2_name, high_score):
+    def __init__(self, player1_name, player2_name, high_score, hard_mode=False):
         self.deck = Deck()
         self.deck.shuffle()
         self.player1 = Player(Fore.BLUE + player1_name + Style.RESET_ALL)
         self.player2 = Player(Fore.RED + player2_name + Style.RESET_ALL)
         self.high_score = HighScore()
 
-        for i in range(26):
-            self.player1.add_card(self.deck.draw_card())
-            self.player2.add_card(self.deck.draw_card())
+        if hard_mode:
+            for i in range(20):
+                self.player1.add_card(self.deck.draw_card())
+            for i in range(32):
+                self.player2.add_card(self.deck.draw_card())
+
+        else:
+            for i in range(26):
+                self.player1.add_card(self.deck.draw_card())
+                self.player2.add_card(self.deck.draw_card())
 
     def play_game(self):
         round_num = 1
@@ -120,7 +127,7 @@ def main():
         rules = f.read()
 
     while True:
-        print("Welcome to War!")
+        print("\nWelcome to War!")
         print("1. Play game")
         print("2. High score")
         print("3. Rules")
@@ -130,7 +137,12 @@ def main():
         if choice == "1":
             player1_name = input("Enter player1 nickname: ")
             player2_name = input("Enter player2 nickname: ")
-            game = Game(player1_name, player2_name, high_score)
+            hard_mode_choice = input("Play in hard mode? (y/n): ")
+            if hard_mode_choice.lower() == "y":
+                print("HARD MODE ACTIVATED!")
+                game = Game(player1_name, player2_name, high_score, hard_mode=True)
+            else:
+                game = Game(player1_name, player2_name, high_score)
             game.play_game()
 
         elif choice == "2":

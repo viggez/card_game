@@ -17,7 +17,7 @@ class Player:
             return None
         return self.hand.pop(0)
 
-    def get_hand(self):
+    def gh(self):
         return self.hand
 
     def clear_hand(self):

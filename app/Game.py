@@ -1,6 +1,6 @@
-from HighScore import HighScore
-from Deck import Deck
-from Player import Player
+from app.highscore import HighScore
+from app.deck import Deck
+from app.player import Player
 from colorama import Fore, Style
 
 
@@ -122,7 +122,7 @@ def main():
     high_score = HighScore()
     high_score.load_scores()
 
-    with open("rules.txt", "r") as f:
+    with open("/Users/vigge/Developer/Python/card_game/app/rules.txt", "r") as f:
         rules = f.read()
 
     while True:

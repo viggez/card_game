@@ -122,9 +122,6 @@ def main():
     high_score = HighScore()
     high_score.load_scores()
 
-    with open("/Users/vigge/Developer/card_game/app/rules.txt", "r") as f:
-        rules = f.read()
-
     while True:
         print("\nWelcome to War!")
         print("1. Play game")
@@ -148,8 +145,8 @@ def main():
             high_score.print_scores()
 
         elif choice == "3":
-            print("Rules menu option selected.")
-            print(rules)
+            print("The rules menu has been moved.")
+            print("Please check the README.md file")
 
         elif choice == "4":
             print("Goodbye!")

@@ -46,9 +46,12 @@ Play against a friend or practice on your own to hone your skills.
 
 ```bash
 git clone https://github.com/viggez/card_game.git
+```
 
 2. In the terminal: Make sure you are in the /card_game directory.
 
+```bash
 3. python3 -m app.game
+```
 
 4. Enjoy :D

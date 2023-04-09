@@ -48,7 +48,7 @@ Play against a friend or practice on your own to hone your skills.
 git clone https://github.com/viggez/card_game.git
 ```
 
-2. In the terminal: Make sure you are in the /card_game directory.
+2. In the terminal: Make sure you are in the card_game directory.
 ```bash
 cd /full/path/to/card_game
 ```

@@ -1,6 +1,6 @@
 # Release History
 
-## [v1.0.0] - YYYY-MM-DD
+## [v1.0.0]
 
 ### Added
 
@@ -11,25 +11,25 @@
 - High score tracking.
 - Cheat command for testing purposes.
 
-## [v1.1.0] - YYYY-MM-DD
+## [v1.1.0]
 
 ### Added
 
-- New feature or improvement (describe what has been added).
+- New feature or improvement.
 
 ### Changed
 
-- Existing feature or improvement (describe what has been changed).
+- Existing feature or improvement.
 
 ### Fixed
 
-- Bug fix or issue resolved (describe what has been fixed).
+- Bug fix or issue resolved.
 
-## [v1.1.1] - YYYY-MM-DD
+## [v1.1.1]
 
 ### Fixed
 
-- Minor bug fix or issue resolved (describe what has been fixed).
+- Minor bug fix or issue resolved.
 
 ...
 

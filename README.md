@@ -49,8 +49,11 @@ git clone https://github.com/viggez/card_game.git
 ```
 
 2. In the terminal: Make sure you are in the /card_game directory.
+```bash
+cd /full/path/to/card_game
+```
 
-3.
+3. Type the following command in your terminal:
 ```bash
 python3 -m app.game
 ```

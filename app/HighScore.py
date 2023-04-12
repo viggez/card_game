@@ -40,10 +40,12 @@ class HighScore:
                     scores.append((name, int(score)))
                 if len(scores) > 0:
                     print("\n ↓ High Scores: ↓")
+                    print("---------------------------")
                     for name, score in scores:
                         print(f"{name}: {score} rounds to win")
                         print("---------------------------")
                 else:
                     print("\nNo high scores to display.")
+                    print("--------------------------")
         except FileNotFoundError:
             print("No high scores to display.")

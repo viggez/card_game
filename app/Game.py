@@ -44,8 +44,8 @@ class Game:
                 if len(self.p2.gh()) < 5:
                     print("Opponent doesn't have enough cards to steal.")
                 else:
-                    print("\nCHEAT ENABLED!")
-                    print(f"{self.p1} stole 5 cards from {self.p2}\n")
+                    print(f"{Fore.GREEN}\nCHEAT ENABLED!")
+                    print(f"{self.p1} stole 5 cards from {self.p2}\n" + Style.RESET_ALL)
                     for i in range(5):
                         self.p1.add_card(self.p2.remove_card())
 
@@ -107,7 +107,7 @@ class Game:
                         resolved_war = True
 
                     else:
-                        print(f"{Fore.GREEN}\nTie! War continues...")
+                        print(f"{Fore.GREEN}\nTie! War continues..." + Style.RESET_ALL)
 
             round_num += 1
 
@@ -142,6 +142,7 @@ def main():
         print("| 4. Quit                      |")
         print("|______________________________|")
         choice = input("\n--> Enter your choice: ")
+        print("--------------------------")
 
         if choice == "1":
             p1_name = input("Enter p1 nickname: ")

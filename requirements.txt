@@ -10,6 +10,7 @@ radon
 
 # Code Style
 black
+colorama
 
 # Documentation
 pdoc3

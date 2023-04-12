@@ -5,7 +5,10 @@ from colorama import Fore, Style
 
 
 class Game:
+    """Represents a game of 'War' card game."""
+
     def __init__(self, p1_name, p2_name, high_score, hard_mode=False):
+        """Initialize a game with the given player names and score table."""
         self.deck = Deck()
         self.deck.shuffle()
         self.p1 = Player(Fore.BLUE + p1_name + Style.RESET_ALL)
@@ -24,6 +27,8 @@ class Game:
                 self.p2.add_card(self.deck.draw_card())
 
     def play_game(self):
+        """Start and play the game."""
+
         round_num = 1
 
         while len(self.p1.gh()) > 0 and len(self.p2.gh()) > 0:
@@ -57,13 +62,17 @@ class Game:
                 self.p2.add_card(p1_card)
 
             else:
-                print(f"{Fore.WHITE}W A R !\n")
+                print(f"{Fore.GREEN}\n=============")
+                print(f"{Fore.GREEN}|   W A R   |")
+                print(f"{Fore.GREEN}=============")
                 cards_in_war = [p1_card, p2_card]
                 resolved_war = False
 
                 while not resolved_war:
                     if len(self.p1.gh()) < 4 or len(self.p2.gh()) < 4:
                         print("Not enought cards to play the war!")
+                        resolved_war = True
+                        break
 
                     for i in range(3):
                         if len(self.p1.gh()) == 0 or len(self.p2.gh()) == 0:
@@ -96,10 +105,19 @@ class Game:
                         resolved_war = True
 
                     else:
-                        print(f"{Fore.WHITE}\nTie! War continues...")
+                        print(f"{Fore.GREEN}\nTie! War continues...")
 
                 if len(self.p1.gh()) == 0 or len(self.p2.gh()) == 0:
+                    print("It's a draw!")
                     break
+                elif len(self.p1.gh()) == 0 or len (self.p1.gh()) < len(self.p2.gh()):
+                    print(f"{self.p2} wins!")
+                    winner_name = self.p2.name
+                    winner_score = round_num
+                else:
+                    print(f"{self.p1} wins!")
+                    winner_name = self.p1.name
+                    winner_score = round_num
 
             round_num += 1
 

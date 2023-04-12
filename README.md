@@ -62,7 +62,7 @@ python3 -m app.game
 
 ## Make Commands
 
-### Tests
+### Code analysis and tests
 
 1. Run unittest with coverage
 ```bash

@@ -30,8 +30,9 @@ class Game:
         """Start and play the game."""
 
         round_num = 1
+        game_over = False
 
-        while len(self.p1.gh()) > 0 and len(self.p2.gh()) > 0:
+        while len(self.p1.gh()) > 0 and len(self.p2.gh()) > 0 and not game_over:
             response = input(f"\nRound {round_num}. Enter to play, or 'q': ")
             if response == 'q':
                 break
@@ -72,6 +73,7 @@ class Game:
                     if len(self.p1.gh()) < 4 or len(self.p2.gh()) < 4:
                         print("Not enought cards to play the war!")
                         resolved_war = True
+                        game_over = True
                         break
 
                     for i in range(3):
@@ -107,18 +109,6 @@ class Game:
                     else:
                         print(f"{Fore.GREEN}\nTie! War continues...")
 
-                if len(self.p1.gh()) == 0 or len(self.p2.gh()) == 0:
-                    print("It's a draw!")
-                    break
-                elif len(self.p1.gh()) == 0 or len (self.p1.gh()) < len(self.p2.gh()):
-                    print(f"{self.p2} wins!")
-                    winner_name = self.p2.name
-                    winner_score = round_num
-                else:
-                    print(f"{self.p1} wins!")
-                    winner_name = self.p1.name
-                    winner_score = round_num
-
             round_num += 1
 
         print("Game over!")
@@ -141,12 +131,17 @@ def main():
     high_score.load_scores()
 
     while True:
-        print("\nWelcome to War!")
-        print("1. Play game")
-        print("2. High score")
-        print("3. Rules")
-        print("4. Quit")
-        choice = input("Enter your choice: ")
+        print(f"{Fore.GREEN}\n================================")
+        print(f"{Fore.GREEN}| Welcome to my card game War! |")
+        print(f"{Fore.GREEN}================================" + Style.RESET_ALL)
+        print("-------------------------------|")
+        print(f"| Menu options:                |")
+        print("| 1. Play game                 |")
+        print("| 2. Display high scores       |")
+        print("| 3. Rules                     |")
+        print("| 4. Quit                      |")
+        print("|______________________________|")
+        choice = input("\n--> Enter your choice: ")
 
         if choice == "1":
             p1_name = input("Enter p1 nickname: ")

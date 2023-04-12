@@ -5,7 +5,7 @@
 # Set the env variable PYTHON to another value if needed
 # PYTHON=python3 make version
 
-PYTHON ?= python # python3 py
+PYTHON ?= python3 # python3 py
 
 # Print out colored action message
 MESSAGE = printf "\033[32;01m---> $(1)\033[0m\n"
@@ -20,7 +20,8 @@ run:
 #
 version:
 	@printf "Currently using executable: $(PYTHON)\n"
-	which $(PYTHON)
+	@echo "Current version: v1.1.0"
+	@which $(PYTHON)
 	$(PYTHON) --version
 
 

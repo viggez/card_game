@@ -155,3 +155,7 @@ make pyreverse
 ```bash
 make doc
 ```
+
+## Author.
+
+Viktor Ahrendtsen Blom - @viggez - https://github.com/viggez

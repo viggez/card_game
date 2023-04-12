@@ -68,73 +68,52 @@ python3 -m app.game
 ```bash
 make coverage
 ```
-\n
 2. Run unittest without coverage
 ```bash
 make unittest
 ```
-3. Run the black codestyle
-note: Running black will change your source code to have a codestyle according to the black codestyle
+3. Run the black codestyle.
+(Note: Running black will change your source code to have a codestyle according to the black codestyle)
 ```bash
 make black
 ```
-
-
 4. Check your Python installation
 ```bash
 make version
 ```
-
-
 5. Create and activate the virtual enviroment
 ```bash
 make venv
 .venv/bin/activate
 ```
-
-
 6. Install packages from requiremtns.txt
 ```bash
 make install
 ```
-
-
 7. Check what is installed
 ```bash
 make installed
 ```
-
-
 8. Run flake8
 ```bash
 make flake8
 ```
-
-
 9. Run pylint
 ```bash
 make pylint
 ```
-
-
 10. Remove files generated for tests or caching
 ```bash
 make clean
 ```
-
-
 11. Remove all you have installed
 ```bash
 make clean-all
 ```
-
-
 12. Run all unittests discovered in your file
 ```bash
 python -m unittest discover
 ```
-
-
 13. Run bandit to find security issues
 ```bash
 make bandit
@@ -149,14 +128,10 @@ make radon-mi
 make radon-raw
 make radon-hal
 ```
-
-
 2. Run cohesion metrics
 ```bash
 make cohesion
 ```
-
-
 3. Call on the metrics methods
 ```bash
 make metrics
@@ -168,20 +143,14 @@ make metrics
 ```bash
 make pydoc
 ```
-
-
 2. Create html and documentation
 ```bash
 make pdoc
 ```
-
-
 3. Create uml's of packages and classes
 ```bash
 make pyreverse
 ```
-
-
 4. Run make pdoc and make pyreverse combined
 ```bash
 make doc

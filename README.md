@@ -59,3 +59,22 @@ python3 -m app.game
 ```
 
 4. Enjoy :D
+
+## Make Commands
+
+1. Run unittest with coverage
+´´´bash
+make coverage
+´´´
+2. Run unittest without coverage
+´´´bash
+make unittest
+´´´
+3. Run black codestyle
+´´´bash
+make black
+´´´
+note: Running black will change your source code to have a codestyle according to the black codestyle
+4. 
+
+

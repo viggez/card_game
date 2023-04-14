@@ -57,7 +57,7 @@ class TestPlayer(unittest.TestCase):
         card = Card(2, "Hearts")
         player.add_card(card)
         player_str = str(player)
-        self.assertEqual(player_str, "Alice has 1 cards")
+        self.assertEqual(player_str, "Alice holds 1 cards")
 
 
 if __name__ == "__main__":

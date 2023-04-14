@@ -14,6 +14,8 @@ class Game:
         self.p1 = Player(Fore.BLUE + p1_name + Style.RESET_ALL)
         self.p2 = Player(Fore.RED + p2_name + Style.RESET_ALL)
         self.high_score = HighScore()
+        self.p1_name = (Fore.BLUE + p1_name + Style.RESET_ALL)
+        self.p2_name = (Fore.RED + p2_name + Style.RESET_ALL)
 
         if hard_mode:
             for i in range(20):
@@ -34,6 +36,7 @@ class Game:
 
         while len(self.p1.gh()) > 0 and len(self.p2.gh()) > 0 and not game_over:
             response = input(f"\nRound {round_num}. Enter to play, or 'q' to quit: ")
+            print("-----------------------------------------")
             if response == "q":
                 break
 
@@ -53,12 +56,12 @@ class Game:
             print(f"{self.p2} plays: {p2_card}")
 
             if p1_card > p2_card:
-                print(f"{self.p1} wins the round!")
+                print(f"{self.p1_name}{Fore.GREEN} wins the round!" + Style.RESET_ALL)
                 self.p1.add_card(p1_card)
                 self.p1.add_card(p2_card)
 
             elif p2_card > p1_card:
-                print(f"{self.p2} wins the round!")
+                print(f"{self.p2_name}{Fore.GREEN} wins the round!" + Style.RESET_ALL)
                 self.p2.add_card(p2_card)
                 self.p2.add_card(p1_card)
 
@@ -95,13 +98,13 @@ class Game:
                     print(f"{self.p2} plays: {p2_card}")
 
                     if p1_card > p2_card:
-                        print(f"{self.p1} wins the war!")
+                        print(f"{self.p1_name}{Fore.GREEN} wins the war!" + Style.RESET_ALL)
                         for card in cards_in_war:
                             self.p1.add_card(card)
                         resolved_war = True
 
                     elif p2_card > p1_card:
-                        print(f"{self.p2} wins the war!")
+                        print(f"{self.p2_name}{Fore.GREEN} wins the war!" + Style.RESET_ALL)
                         for card in cards_in_war:
                             self.p2.add_card(card)
                         resolved_war = True
@@ -150,7 +153,7 @@ def main():
             hard_mode_choice = input("Play in hard mode? (y/n): ")
             if hard_mode_choice.lower() == "y":
                 print(f"{Fore.GREEN}HARD MODE ACTIVATED!")
-                print(f"{p2_name} Steals 10 cards from {p1_name}!" + Style.RESET_ALL)
+                print(f"{p2_name} Steals 6 cards from {p1_name}!" + Style.RESET_ALL)
                 game = Game(p1_name, p2_name, high_score, hard_mode=True)
             else:
                 game = Game(p1_name, p2_name, high_score)

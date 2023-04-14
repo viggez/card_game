@@ -30,4 +30,4 @@ class Player:
 
     def __str__(self):
         """Return a string representation of the player."""
-        return f"{self.name} has {len(self.hand)} cards"
+        return f"{self.name} holds {len(self.hand)} cards"

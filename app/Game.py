@@ -149,7 +149,8 @@ def main():
             p2_name = input("Enter p2 nickname: ")
             hard_mode_choice = input("Play in hard mode? (y/n): ")
             if hard_mode_choice.lower() == "y":
-                print("HARD MODE ACTIVATED!")
+                print(f"{Fore.GREEN}HARD MODE ACTIVATED!")
+                print(f"{p2_name} Steals 10 cards from {p1_name}!" + Style.RESET_ALL)
                 game = Game(p1_name, p2_name, high_score, hard_mode=True)
             else:
                 game = Game(p1_name, p2_name, high_score)

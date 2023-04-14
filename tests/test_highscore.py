@@ -50,5 +50,5 @@ class TestHighScore(unittest.TestCase):
             self.assertEqual(lines, ["Alice,3\n", "Bob,5\n"])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

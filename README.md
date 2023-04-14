@@ -139,6 +139,8 @@ make metrics
 
 ### Documentation
 
+Note: The documentation commands currently do not work as intended
+
 1. Create documentation folder
 ```bash
 make pydoc

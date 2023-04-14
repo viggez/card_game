@@ -36,5 +36,5 @@ class TestCard(unittest.TestCase):
         self.assertTrue(card2 == card3)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

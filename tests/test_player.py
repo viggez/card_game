@@ -60,5 +60,5 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(player_str, "Alice has 1 cards")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

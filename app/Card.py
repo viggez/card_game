@@ -21,13 +21,13 @@ class Card:
 
     def get_value(self):
         """Get the numerical value of the card's rank."""
-        if self.rank == 'Jack':
+        if self.rank == "Jack":
             return 11
-        elif self.rank == 'Queen':
+        elif self.rank == "Queen":
             return 12
-        elif self.rank == 'King':
+        elif self.rank == "King":
             return 13
-        elif self.rank == 'Ace':
+        elif self.rank == "Ace":
             return 14
         else:
             return int(self.rank)

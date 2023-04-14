@@ -34,13 +34,13 @@ class Game:
 
         while len(self.p1.gh()) > 0 and len(self.p2.gh()) > 0 and not game_over:
             response = input(f"\nRound {round_num}. Enter to play, or 'q': ")
-            if response == 'q':
+            if response == "q":
                 break
 
             p1_card = self.p1.play_card()
             p2_card = self.p2.play_card()
 
-            if response == 'cheat':
+            if response == "cheat":
                 if len(self.p2.gh()) < 5:
                     print("Opponent doesn't have enough cards to steal.")
                 else:
@@ -172,5 +172,5 @@ def main():
     high_score.save_scores()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

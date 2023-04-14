@@ -8,7 +8,7 @@ class Deck:
     def __init__(self):
         """Initialize a new deck of 52 playing cards."""
         self.cards = []
-        for suit in ('Hearts', 'Diamonds', 'Clubs', 'Spades'):
+        for suit in ("Hearts", "Diamonds", "Clubs", "Spades"):
             for rank in range(2, 15):
                 self.cards.append(Card(rank, suit))
 
@@ -23,4 +23,4 @@ class Deck:
         return self.cards.pop()
 
     def __str__(self):
-        return ', '.join([str(card) for card in self.cards])
+        return ", ".join([str(card) for card in self.cards])

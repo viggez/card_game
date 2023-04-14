@@ -14,7 +14,7 @@ class TestDeck(unittest.TestCase):
     def test_deck_contains_all_cards(self):
         """Test if the Deck object contains all the standard playing cards."""
         deck = Deck()
-        for suit in ('Hearts', 'Diamonds', 'Clubs', 'Spades'):
+        for suit in ("Hearts", "Diamonds", "Clubs", "Spades"):
             for rank in range(2, 15):
                 card = Card(rank, suit)
                 self.assertIn(card, deck.cards)
@@ -49,5 +49,5 @@ class TestDeck(unittest.TestCase):
         self.assertIsInstance(deck_str, str)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

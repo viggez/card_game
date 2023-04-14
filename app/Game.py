@@ -33,7 +33,7 @@ class Game:
         game_over = False
 
         while len(self.p1.gh()) > 0 and len(self.p2.gh()) > 0 and not game_over:
-            response = input(f"\nRound {round_num}. Enter to play, or 'q': ")
+            response = input(f"\nRound {round_num}. Enter to play, or 'q' to quit: ")
             if response == "q":
                 break
 
